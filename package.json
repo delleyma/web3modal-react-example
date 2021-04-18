@@ -1,6 +1,7 @@
 {
   "name": "web3-react-example",
   "version": "0.1.0",
+  "homepage":".",
   "private": true,
   "dependencies": {
     "@toruslabs/torus-embed": "^1.8.1",
