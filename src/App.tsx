@@ -131,8 +131,8 @@ const INITIAL_STATE: IAppState = {
   web3: null,
   provider: null,
   connected: false,
-  chainId: 1,
-  networkId: 1,
+  chainId: 56,
+  networkId: 56,
   assets: [],
   showModal: false,
   pendingRequest: false,
@@ -383,6 +383,9 @@ class App extends React.Component<any, any> {
     if (!web3) {
       return;
     }
+    
+    // tslint:disable-next-line:no-console
+    console.log(web3.currentProvider)
 
     // test message
     const message = "My email is john@doe.com - 1537836206101";

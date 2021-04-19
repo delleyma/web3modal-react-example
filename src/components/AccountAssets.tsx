@@ -6,12 +6,12 @@ import { IAssetData } from '../helpers/types'
 const AccountAssets = (props: any) => {
   const { assets, chainId } = props
   const defaultNativeCurrency: IAssetData =
-    chainId === 100
+    chainId === 56
       ? {
           contractAddress: '',
-          symbol: 'xDAI',
-          name: 'xDAI',
-          decimals: '18',
+          symbol: 'BNB',
+          name: 'Binance Smart Chain',
+          decimals: '8',
           balance: '0'
         }
       : {

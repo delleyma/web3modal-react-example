@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios'
 import { IAssetData, IGasPrices, IParsedTx } from './types'
 
 const api: AxiosInstance = axios.create({
-  baseURL: 'https://ethereum-api.xyz',
+  baseURL: 'https://api.bscscan.com/api',
   timeout: 30000, // 30 secs
   headers: {
     Accept: 'application/json',
@@ -15,9 +15,12 @@ export async function apiGetAccountAssets(
   chainId: number
 ): Promise<IAssetData[]> {
   const response = await api.get(
-    `/account-assets?address=${address}&chainId=${chainId}`
+    `?module=account&action=balance&address=${address}&tag=latest&apikey=3T5UAVUSAS2FRPS9MI54U1BNDRCWK7XC8M`
   )
-  const { result } = response.data
+
+
+  const result = [{"symbol":"BNB","name":"Binance Smart Chain","decimals":"8","contractAddress":"","balance":response.data.result}]
+  
   return result
 }
 
